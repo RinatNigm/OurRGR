@@ -34,6 +34,7 @@ public class OurRGR extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jTextField7 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel2 = new javax.swing.JLabel();
@@ -60,7 +61,6 @@ public class OurRGR extends javax.swing.JFrame {
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
         jTextField9 = new javax.swing.JTextField();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
@@ -89,8 +89,14 @@ public class OurRGR extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jTextField17 = new javax.swing.JTextField();
+        jTextField8 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                formWindowClosed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setText("Расчет ЖКХ");
@@ -119,6 +125,11 @@ public class OurRGR extends javax.swing.JFrame {
                 jTextField2ActionPerformed(evt);
             }
         });
+        jTextField2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextField2KeyPressed(evt);
+            }
+        });
 
         jTextField3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -139,6 +150,12 @@ public class OurRGR extends javax.swing.JFrame {
         jLabel13.setText("Холодная вода");
 
         jTextField4.setBackground(new java.awt.Color(204, 204, 204));
+
+        jTextField5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextField5KeyPressed(evt);
+            }
+        });
 
         jLabel14.setText("руб.");
 
@@ -166,6 +183,12 @@ public class OurRGR extends javax.swing.JFrame {
 
         jLabel25.setText("Газ");
 
+        jTextField11.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextField11KeyPressed(evt);
+            }
+        });
+
         jTextField12.setBackground(new java.awt.Color(204, 204, 204));
 
         jLabel26.setText("Интернет");
@@ -173,6 +196,12 @@ public class OurRGR extends javax.swing.JFrame {
         jLabel27.setText("Интернет");
 
         jLabel28.setText("Интернет");
+
+        jTextField14.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextField14KeyPressed(evt);
+            }
+        });
 
         jTextField15.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -208,6 +237,11 @@ public class OurRGR extends javax.swing.JFrame {
         });
 
         jTextField17.setName(""); // NOI18N
+        jTextField17.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextField17KeyPressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -315,7 +349,7 @@ public class OurRGR extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel33))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel20))
                     .addComponent(jLabel4)
@@ -337,7 +371,7 @@ public class OurRGR extends javax.swing.JFrame {
                         .addComponent(jTextField16, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel36)))
-                .addGap(58, 58, 58))
+                .addGap(72, 72, 72))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -423,8 +457,8 @@ public class OurRGR extends javax.swing.JFrame {
                         .addComponent(jLabel19)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel20))
+                            .addComponent(jLabel20)
+                            .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel25)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -509,6 +543,82 @@ if (option == JFileChooser.APPROVE_OPTION) { //если файл выбран, �
    Raschet();
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jTextField2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField2KeyPressed
+                                 
+    if((evt.getKeyCode() == 40)||(evt.getKeyCode() == 10)){
+      //при нажатии на кнопки Enter или Down идет переход фокуса на поле
+      //ввода показания счетчика для холодной воды  
+      jTextField5.requestFocusInWindow()  ;
+           
+    }
+    
+    
+    }//GEN-LAST:event_jTextField2KeyPressed
+
+    private void jTextField5KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField5KeyPressed
+         if((evt.getKeyCode() == 40)||(evt.getKeyCode() == 10)){
+      //при нажатии на кнопки Enter или Down идет переход фокуса на поле
+      //ввода показания счетчика для электирчества
+        jTextField17.requestFocusInWindow()  ;
+    }else{
+    if(evt.getKeyCode() == 38){
+      //при нажатии на кнопки Up идет переход фокуса на поле
+      //ввода показания счетчика для горячей воды
+        jTextField2.requestFocusInWindow()  ;
+    }   
+    }
+    }//GEN-LAST:event_jTextField5KeyPressed
+
+    private void jTextField17KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField17KeyPressed
+        if((evt.getKeyCode() == 40)||(evt.getKeyCode() == 10)){
+      //при нажатии на кнопки Enter или Down идет переход фокуса на поле
+      //ввода показания счетчика для холодной газа
+      jTextField11.requestFocusInWindow()  ;
+        //System.out.println(evt.getKeyCode());
+    }else{
+       if(evt.getKeyCode() == 38){
+          //при нажатии на кнопки Up идет переход фокуса на поле
+          //ввода показания счетчика для холодной воды
+            jTextField5.requestFocusInWindow()  ;
+        }     
+    }
+    }//GEN-LAST:event_jTextField17KeyPressed
+
+    private void jTextField11KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField11KeyPressed
+        if((evt.getKeyCode() == 40)||(evt.getKeyCode() == 10)){
+      //при нажатии на кнопки Enter или Down идет переход фокуса на поле
+      //ввода показания счетчика для интернета
+      jTextField14.requestFocusInWindow()  ;
+    }else{
+        //System.out.println(evt.getKeyCode());
+        if(evt.getKeyCode() == 38){
+          //при нажатии на кнопки Up идет переход фокуса на поле
+          //ввода показания счетчика для электирчества
+            jTextField17.requestFocusInWindow()  ;
+        }  
+    }
+    }//GEN-LAST:event_jTextField11KeyPressed
+
+    private void jTextField14KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField14KeyPressed
+       if((evt.getKeyCode() == 10)){
+      //при нажатии на кнопки Enter идет 
+      //запуск расчета  
+      Raschet();
+    }else{
+        //System.out.println(evt.getKeyCode());
+        if(evt.getKeyCode() == 38){
+          //при нажатии на кнопки Up переход фокуса на поле  
+          //ввода показания счетчика для газа
+            jTextField11.requestFocusInWindow()  ;
+        }  
+    }
+    }//GEN-LAST:event_jTextField14KeyPressed
+
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+    //Завершение программы при закрытии окна
+    System.exit(0);
+    }//GEN-LAST:event_formWindowClosed
+
     private void Raschet(){
    if((OurRGR.this.jTextField1.getText().trim().equals(""))||
       (OurRGR.this.jTextField4.getText().trim().equals(""))||
@@ -555,7 +665,7 @@ if (option == JFileChooser.APPROVE_OPTION) { //если файл выбран, �
         }  
         dd=new java.text.DecimalFormat("0.00").format(d); 
         dd=dd.replace(",",".");
-        OurRGR.this.jTextField7.setText(dd);
+        OurRGR.this.jTextField8.setText(dd);
         ddd=ddd+d;
         //4.Газ         
         if(OurRGR.this.jTextField12.getText().trim().equals("")){
@@ -588,7 +698,7 @@ if (option == JFileChooser.APPROVE_OPTION) { //если файл выбран, �
         return;
     }    
     
-}
+}                                                                                                    
     /**
      * @param args the command line arguments
      */
@@ -679,6 +789,7 @@ if (option == JFileChooser.APPROVE_OPTION) { //если файл выбран, �
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
     // End of variables declaration//GEN-END:variables
 }
