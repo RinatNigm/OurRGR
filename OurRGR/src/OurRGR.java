@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -60,7 +61,6 @@ public class OurRGR extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jTextField7 = new javax.swing.JTextField();
-        jTextField8 = new javax.swing.JTextField();
         jTextField9 = new javax.swing.JTextField();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
@@ -87,6 +87,8 @@ public class OurRGR extends javax.swing.JFrame {
         jTextField16 = new javax.swing.JTextField();
         jLabel36 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jTextField17 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -150,12 +152,6 @@ public class OurRGR extends javax.swing.JFrame {
 
         jLabel19.setText("Электричество");
 
-        jTextField8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField8ActionPerformed(evt);
-            }
-        });
-
         jTextField9.setBackground(new java.awt.Color(204, 204, 204));
 
         jLabel20.setText("руб.");
@@ -204,6 +200,15 @@ public class OurRGR extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setText("Расчитать");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jTextField17.setName(""); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -226,76 +231,79 @@ public class OurRGR extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
                     .addGroup(layout.createSequentialGroup()
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel8))
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel11)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel16))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel22))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel29))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel32))
+                    .addComponent(jButton2))
+                .addGap(62, 62, 62)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(14, 14, 14)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel8))
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel11)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel16))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel22))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel29))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel32)))
-                        .addGap(62, 62, 62)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(14, 14, 14)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel6)
+                                    .addComponent(jLabel12)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel6)
-                                            .addComponent(jLabel12)
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                    .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
-                                                    .addComponent(jTextField5))
+                                            .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
+                                            .addComponent(jTextField5, javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jTextField17))
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                     .addComponent(jLabel15)
-                                                    .addComponent(jLabel9)
-                                                    .addComponent(jLabel21))))
-                                        .addGap(101, 101, 101))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jTextField14)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(121, 121, 121))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jTextField8)
-                                        .addGap(138, 138, 138))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jTextField11)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel30)
-                                        .addGap(101, 101, 101))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel18)
-                                            .addComponent(jLabel24)
-                                            .addComponent(jLabel27))
-                                        .addGap(70, 70, 70))))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jButton2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel35)
+                                                    .addComponent(jLabel9)))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(4, 4, 4)
+                                                .addComponent(jLabel21)))))
+                                .addGap(101, 101, 101))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jTextField14)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(121, 121, 121))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jTextField11)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel30)
+                                .addGap(101, 101, 101))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel18)
+                                    .addComponent(jLabel24)
+                                    .addComponent(jLabel27))
+                                .addGap(70, 70, 70))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jButton1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel35))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addGap(0, 0, Short.MAX_VALUE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -369,12 +377,11 @@ public class OurRGR extends javax.swing.JFrame {
                             .addComponent(jLabel17)
                             .addComponent(jLabel18))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel22)
-                                .addComponent(jLabel21)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel22)
+                            .addComponent(jLabel21)
+                            .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel23)
@@ -440,7 +447,9 @@ public class OurRGR extends javax.swing.JFrame {
                         .addGap(32, 32, 32))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(jButton2)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton1)
+                            .addComponent(jButton2))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
@@ -454,10 +463,6 @@ public class OurRGR extends javax.swing.JFrame {
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField2ActionPerformed
-
-    private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField8ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         
@@ -499,6 +504,91 @@ if (option == JFileChooser.APPROVE_OPTION) { //если файл выбран, �
 }
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+         //процедура расчета
+   Raschet();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void Raschet(){
+   if((OurRGR.this.jTextField1.getText().trim().equals(""))||
+      (OurRGR.this.jTextField4.getText().trim().equals(""))||
+      (OurRGR.this.jTextField9.getText().trim().equals(""))||
+      (OurRGR.this.jTextField12.getText().trim().equals(""))||
+      (OurRGR.this.jTextField15.getText().trim().equals(""))){
+      //если хотя бы одно из полей, выделенных под тарифы, незаполнено,выводим ошибку 
+       JOptionPane.showMessageDialog(null, "Не введены тарифы!");   
+    }else{
+        //переменные  
+        Double d; String dd; Double ddd;
+        d=0.00; dd=""; ddd=0.00;
+        //Расчет
+        //1.Горячая вода 
+        if(OurRGR.this.jTextField2.getText().trim().equals("")){ //если показания счетчика 0, тогда 
+          d=0.00;             
+        }else{
+          //если не 0, считаем по формуле  
+          d = Double.parseDouble(OurRGR.this.jTextField1.getText())*Double.parseDouble(OurRGR.this.jTextField2.getText());    
+        }  
+        //переводим в число формата 0,00
+        dd=new java.text.DecimalFormat("0.00").format(d);   
+        //меняем "," на "."
+        dd=dd.replace(",",".");
+        //отображаем сумму на форме в расчетах
+        OurRGR.this.jTextField3.setText(dd);
+        //итоговая накопительная сумма
+        ddd=d;
+        //2.Холодная вода        
+        if(OurRGR.this.jTextField4.getText().trim().equals("")){
+          d=0.00;             
+        }else{
+          d = Double.parseDouble(OurRGR.this.jTextField4.getText())*Double.parseDouble(OurRGR.this.jTextField5.getText());    
+        }  
+        dd=new java.text.DecimalFormat("0.00").format(d);   
+        dd=dd.replace(",",".");
+        OurRGR.this.jTextField6.setText(dd);
+        ddd=ddd+d;
+        //3.Электричество        
+        if(OurRGR.this.jTextField9.getText().trim().equals("")){
+          d=0.00;    
+        }else{
+          d = Double.parseDouble(OurRGR.this.jTextField9.getText())*Double.parseDouble(OurRGR.this.jTextField17.getText());    
+        }  
+        dd=new java.text.DecimalFormat("0.00").format(d); 
+        dd=dd.replace(",",".");
+        OurRGR.this.jTextField7.setText(dd);
+        ddd=ddd+d;
+        //4.Газ         
+        if(OurRGR.this.jTextField12.getText().trim().equals("")){
+          d=0.00;    
+        }else{
+          d = Double.parseDouble(OurRGR.this.jTextField11.getText())*Double.parseDouble(OurRGR.this.jTextField12.getText());    
+        }  
+        dd=new java.text.DecimalFormat("0.00").format(d);  
+        dd=dd.replace(",",".");
+        OurRGR.this.jTextField10.setText(dd);
+        ddd=ddd+d;
+        //5.Интернет
+        if(OurRGR.this.jTextField15.getText().trim().equals("")){
+          d=0.00;    
+        }else{
+          d = Double.parseDouble(OurRGR.this.jTextField14.getText())*Double.parseDouble(OurRGR.this.jTextField15.getText());    
+        }
+        dd=new java.text.DecimalFormat("0.00").format(d);
+        dd=dd.replace(",",".");
+        OurRGR.this.jTextField13.setText(dd);
+        ddd=ddd+d;
+
+        //меняем формат итоговой суммы на 0,00
+        dd=new java.text.DecimalFormat("0.00").format(ddd);   
+        //меняем "," на ".Э
+        dd=dd.replace(",",".");
+        //отображаем итоговую сумму на форме
+        OurRGR.this.jTextField16.setText(dd);
+        
+        return;
+    }    
+    
+}
     /**
      * @param args the command line arguments
      */
@@ -535,6 +625,7 @@ if (option == JFileChooser.APPROVE_OPTION) { //если файл выбран, �
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -581,13 +672,13 @@ if (option == JFileChooser.APPROVE_OPTION) { //если файл выбран, �
     private javax.swing.JTextField jTextField14;
     private javax.swing.JTextField jTextField15;
     private javax.swing.JTextField jTextField16;
+    private javax.swing.JTextField jTextField17;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
     // End of variables declaration//GEN-END:variables
 }
